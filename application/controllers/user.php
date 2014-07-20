@@ -16,7 +16,7 @@ class User extends CI_Controller
 	{
 		echo "<?xml version='1.0' encoding='UTF-8'?>";
 		echo "<Response>";
-		echo "<Gather action='".$this->getserverurl()."user/forwardxml?callback=".urlencode($_GET['callback'])."' numDigits='1'>";
+		echo "<Gather action='".$this->getserverurl()."user/forwardxml?callback=".urlencode($_GET['callback'])."&amp;mail=".urlencode($_GET['mail'])."' numDigits='1'>";
 		echo "<Say voice='alice' loop='0'>Please press any key to speak to the customer.</Say>";
 		echo "</Gather>";
 		echo "</Response>";
@@ -27,7 +27,7 @@ class User extends CI_Controller
 		echo "<?xml version='1.0' encoding='UTF-8'?>";
 		echo "<Response>";
 		echo "<Say voice='alice'>Please hold on. Dialing the customer.</Say>";
-		echo "<Dial timeout='60'>".$_GET['callback']."</Dial>";
+		echo "<Dial timeout='60' record='record-from-answer' action='".$this->getserverurl()."user/callback?mail=".urlencode($_GET['mail'])."'>".$_GET['callback']."</Dial>";
 		echo "</Response>";
 	}
 	
@@ -43,14 +43,15 @@ class User extends CI_Controller
 		$client = new Services_Twilio($sid, $token);
 		
 		$targetnumber = isset($_POST['targetnumber'])?$_POST['targetnumber']:"+16175843998";
-		$sourcenumber = isset($_POST['sourcenumber'])?$_POST['sourcenumber']:"+12137008466";
+		$sourcenumber = isset($_POST['sourcenumber'])?$_POST['sourcenumber']:"+14084776294";
 		$sourceemail = isset($_POST['sourceemail'])?$_POST['sourceemail']:"eecsxielu@gmail.com";
 		
-		$call = $client->account->calls->create($from, $targetnumber, $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber), array(
-			'Record' => 'true',
-			'StatusCallback' => $this->getserverurl().'user/callback?email='.$sourceemail
+		$call = $client->account->calls->create($from, $targetnumber, $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail), array(
+			//'Record' => 'true',
+			//'StatusCallback' => $this->getserverurl().'user/callback?email='.$sourceemail
 		));
 		$this->load->view('user_call_success_view');
+		//echo $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail);
 	}
 	
 	public function callback()
@@ -68,7 +69,7 @@ class User extends CI_Controller
 		$this->email->initialize($config);
 		
 		$this->email->from('callmemaybeserver@gmail.com', 'CallMeMaybe');
-		$list = array($_GET['email']);
+		$list = array($_GET['mail']);
 		$this->email->to($list);
 		$this->email->reply_to('callmemaybeserver@gmail.com', 'CallMeMaybe');
 		$this->email->subject('Your Call Recording is Available for Downloading');
