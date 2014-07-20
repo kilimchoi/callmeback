@@ -31,10 +31,11 @@
            </li>
            <li id="li_outbound">
               <label>Who can we call for you?</label>
-              <input type="text" name="outbound" id="outbound" class="text-input typeahead" autocomplete="off" placeholder="Type the name of a company&hellip;" style="background-color: #111;"/>
-              <p class="company-not-found"></p>
+              <input type="text" name="outbound" id="outbound" class="text-input typeahead" autocomplete="off" placeholder="Name of a company&hellip;" style="background-color: #111;"/>
+              
            </li>
         </ul>
+        <img src="<?=base_url('images/myloadingimage.gif')?>" style="display: none;" id="loading_image">
       </form>
 
     </div>

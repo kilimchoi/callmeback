@@ -118,7 +118,10 @@ function optionsComplete() {
       console.log('response: ' + response);
     });
 	*/
-    document.getElementById("app").submit();
+  
+  $('#loading_image').show(); // show animation
+  document.getElementById("app").submit();
+    
 
   });
 

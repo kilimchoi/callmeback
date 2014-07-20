@@ -3073,7 +3073,41 @@ label, input, textarea, select, .optgroup a, .extra-help, .btn {
   background: transparent;
   color: #d4d4d4;
   width: 100%;
-  transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out; 
+}
+
+input:not([type]), input[type="tel"] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.125em;
+  border: none;
+  background: transparent;
+  width: 50%;
+  color: #d4d4d4;
+  transition: all 0.25s ease-in-out; 
+}
+
+input:not([type]), input[type="email"] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.125em;
+  border: none;
+  background: transparent;
+  width: 70%;
+  color: #d4d4d4;
+  transition: all 0.25s ease-in-out; 
+}
+
+input#outbound { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.125em;
+  border: none;
+  background: transparent;
+  width: 60%;
+  color: #d4d4d4;
+  transition: all 0.25s ease-in-out; 
+}
 
 li.optgroup a {
   display: block;
@@ -3144,7 +3178,7 @@ input, textarea {
 
 /* TWITTER TYPEAHEAD ====================================================== */
 .twitter-typeahead {
-  width: 100%; }
+  width: 80%; }
 
 .tt-dropdown-menu, option {
   margin: 0;
