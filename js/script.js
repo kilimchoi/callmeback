@@ -72,11 +72,11 @@ var i = 0;
 function optionsComplete() {
   i += 1;
   console.log('i is ', i);
-  var new_button = $('<li style="text-align: center"><button class="ladda-button" data-color="green" data-style="expand-left"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
+  var new_button = $('<li style="text-align: center"><button class="ladda-button" data-color="green" data-style="expand-left" type="button"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
   new_button.appendTo('ul.form-fields');
   Ladda.bind( '.ladda-button', { timeout: 2000 } );
   // Submit data
-  $('#submit').on('click', function(e){
+  $('.ladda-button').on('click', function(e){
   
     // Build the payload
     var payload = {};
@@ -92,6 +92,7 @@ function optionsComplete() {
     $("#sourcenumber_hidden").val(payload['phone']);
     $("#sourceemail_hidden").val(payload['email']);
     $("#targetnumber_hidden").val(payload['outbound']);
+	
 	
     // Hide field entry
     $('#intro').fadeOut();

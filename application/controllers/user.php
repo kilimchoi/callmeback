@@ -50,8 +50,8 @@ class User extends CI_Controller
 			//'Record' => 'true',
 			//'StatusCallback' => $this->getserverurl().'user/callback?email='.$sourceemail
 		));
-		//$this->load->view('user_call_success_view');
-		echo $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail);
+		$this->load->view('user_call_success_view');
+		//echo $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail);
 	}
 	
 	public function callback()
