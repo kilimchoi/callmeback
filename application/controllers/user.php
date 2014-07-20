@@ -72,11 +72,9 @@ class User extends CI_Controller
 		$this->email->to($list);
 		$this->email->reply_to('callmemaybeserver@gmail.com', 'CallMeMaybe');
 		$this->email->subject('Your Call Recording is Available for Downloading');
-		$this->email->message('Thanks for choosing CallMeMaybe. Your recent call recording is available at: '.$_POST['RecordingUrl'].' . Have a good day!');
+		$this->email->message('Dear Customer, <p>Thanks for choosing CallMeMaybe. The recording of your recent phone call with '.$_POST['To'].' is available at:<p>'.$_POST['RecordingUrl'].'<p>Have a good day!<p><p>Sincerely,<br>Callmaybe');
 		$this->email->send();
 	}
-	
-	
 }
 
 ?>
