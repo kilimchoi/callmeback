@@ -18,7 +18,8 @@ class User extends CI_Controller
 			'Record' => 'true'
 		));
 		$recordings = $client->account->recordings->get($call->sid);
-		echo $recordings;
+		//echo $recordings;
+		$this->load->view('user_call_success_view');
 	}
 
 	public function sms()

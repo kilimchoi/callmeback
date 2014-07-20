@@ -75,7 +75,7 @@ function optionsComplete() {
 
   // Submit data
   $('#submit').on('click', function(e){
-
+	
     // Build the payload
     var payload = {};
     $('form#app').find("input, textarea, .text-input").each(function() {
@@ -94,10 +94,11 @@ function optionsComplete() {
     $('#intro').fadeOut();
     $('.form-fields li').each(function(){ $(this).fadeOut(); });
 
+	/*
     // POST to the application
     var jqxhr = $.ajax({
       type: 'POST',
-      url: 'http://127.0.0.1/hackathon/index.php/user/call',
+      url: 'index.php/user/call',
       contentType: "application/json;charset=UTF-8",  // request
       data: payload,
       accepts: "application/json",  // response
@@ -116,7 +117,8 @@ function optionsComplete() {
       console.log('request: '  + payload);
       console.log('response: ' + response);
     });
-    
+	*/
+    document.getElementById("app").submit();
 
   });
 

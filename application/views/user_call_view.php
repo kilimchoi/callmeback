@@ -19,7 +19,7 @@
 
       <p id="intro">Tired of waiting on hold for a customer service rep? Call Me Maybe does the waiting for you and calls you back when a real live person is on the line.</p>
 
-      <form id="app" class="animated fadeIn">
+      <form id="app" class="animated fadeIn" action="<?=base_url('index.php/user/call')?>" method="post">
         <ul class="form-fields">
            <li id="li_phone">
               <label>How can we reach you?</label>
