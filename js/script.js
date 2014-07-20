@@ -97,7 +97,7 @@ function optionsComplete() {
     // POST to the application
     var jqxhr = $.ajax({
       type: 'POST',
-      url: '/outbound/new',
+      url: 'http://127.0.0.1/hackathon/index.php/user/call',
       contentType: "application/json;charset=UTF-8",  // request
       data: payload,
       accepts: "application/json",  // response

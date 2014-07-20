@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimal-ui">
     <meta name="mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Bitter:700|Open+Sans:400,400italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url('css/style.css')?>" media="all" rel="stylesheet" type="text/css" />
   </head>
   <body id="top">
 
@@ -39,11 +39,11 @@
 
     </div>
 
-    <script src="js/jquery-1.11.0.min.js" charset="utf-8"></script>
-    <script src="js/jquery.smooth-scroll.min.js" charset="utf-8"></script>
-    <script src="js/typeahead.bundle.min.js" charset="utf-8"></script>
-    <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
-    <script src="js/script.js" charset="utf-8"></script>
+    <script src="<?=base_url('js/jquery-1.11.0.min.js')?>" charset="utf-8"></script>
+    <script src="<?=base_url('js/jquery.smooth-scroll.min.js')?>" charset="utf-8"></script>
+    <script src="<?=base_url('js/typeahead.bundle.min.js')?>" charset="utf-8"></script>
+    <script src="<?=base_url('js/jquery.maskedinput.min.js')?>" type="text/javascript"></script>
+    <script src="<?=base_url('js/script.js')?>" charset="utf-8"></script>
     
   </body>
 </html>

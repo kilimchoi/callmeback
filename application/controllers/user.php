@@ -2,6 +2,10 @@
 
 class User extends CI_Controller
 {
+	public function index()
+	{
+		$this->load->view('user_call_view');
+	}
 	public function call()
 	{
 		require 'twilio-php-master/Services/Twilio.php';
