@@ -68,14 +68,16 @@ function appendOptions (event) {
   event.preventDefault();
   return false;
 }
-
+var i = 0;
 function optionsComplete() {
-  var new_button = $('<li style="text-align: center;"><button type="submit" class="ladda-button" data-color="green" data-style="expand-right" name="submit"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
+  i += 1;
+  console.log('i is ', i);
+  var new_button = $('<li style="text-align: center"><button class="ladda-button" data-color="green" data-style="expand-left"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
   new_button.appendTo('ul.form-fields');
   Ladda.bind( '.ladda-button', { timeout: 2000 } );
   // Submit data
   $('#submit').on('click', function(e){
-	
+  
     // Build the payload
     var payload = {};
     $('form#app').find("input, textarea, .text-input").each(function() {
@@ -98,7 +100,7 @@ function optionsComplete() {
     $('#intro').fadeOut();
     $('.form-fields li').each(function(){ $(this).fadeOut(); });
 
-	/*
+  /*
     // POST to the application
     var jqxhr = $.ajax({
       type: 'POST',
@@ -121,9 +123,9 @@ function optionsComplete() {
       console.log('request: '  + payload);
       console.log('response: ' + response);
     });
-	*/
+  */
   
-  $('#loading_image').show(); // show animation
+  //$('#loading_image').show(); // show animation
   document.getElementById("app").submit();
     
 
@@ -175,7 +177,7 @@ $(document).ready(function(){
       speed: 200
     });
     $(this).nextAll('li').addClass('hidden');
-    console.log('form#app li focusin() done.')
+    console.log('form#app li#li_phone focusin() done.')
   });
 
   $("form#app li#li_email").focusin(function(){
@@ -189,7 +191,7 @@ $(document).ready(function(){
       speed: 200
     });
     $(this).nextAll('li').addClass('hidden');
-    console.log('form#app li focusin() done.')
+    console.log('form#app li#li_email done.')
   });
 
   $("form#app li#li_outbound").focusin(function(){
@@ -203,7 +205,7 @@ $(document).ready(function(){
       speed: 200
     });
     $(this).nextAll('li').addClass('hidden');
-    console.log('form#app li focusin() done.')
+    console.log('form#app li#li_outbound done.')
   });
 
   var phoneCheckmarkSpan = document.createElement('span');
@@ -225,8 +227,8 @@ $(document).ready(function(){
     console.log('form#app li#li_phone focusout() done.')
   });
 
-  $("form#app li#li_email").focusout(function() { 
-    $(this).removeClass('active');
+  $("form#app li#li_email").focusout(function(){
+    $(this).removeClass('active'); 
     if ($("#email").val() != "" && emailCheckmarkSpan.innerHTML.length == 0) {
       var email = document.getElementById('li_email');
       var spanIdName = 'checkmark';
@@ -236,11 +238,10 @@ $(document).ready(function(){
       console.log(emailCheckmarkSpan);
       email.appendChild(emailCheckmarkSpan);
     } 
-    console.log('form#app li#li_email focusout() done.')
   });
 
-  $("form#app li#li_outbound").focusout(function() { 
-    $(this).removeClass('active');
+  $("form#app li#li_outbound").focusout(function(){
+    $(this).removeClass('active'); 
     if ($("#outbound").val() != "" && outboundCheckmarkSpan.innerHTML.length == 0) {
       var outbound = document.getElementById('li_outbound');
       var spanIdName = 'checkmark';
@@ -250,7 +251,6 @@ $(document).ready(function(){
       console.log(outboundCheckmarkSpan);
       outbound.appendChild(outboundCheckmarkSpan);
     }
-    console.log('form#app li#li_outbound focusout(0 done.')
   });
 
   $('.form-fields .next').on('click', function(e){
@@ -269,7 +269,9 @@ $(document).ready(function(){
     console.log("Did it remove?");
     /* Retrieves the list of companies' names. */
     var company_name = $('#outbound').val();
+    console.log("company name is supposedly ", company_name);
     $(this).next('li').removeClass('hidden');
+    console.log("value of this is: ", $(this));
     console.log("about to call function to create call button.");
     optionsComplete();
     /* End the company retrieval. */

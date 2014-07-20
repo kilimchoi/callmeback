@@ -7,8 +7,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Bitter:700|Open+Sans:400,400italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href="<?=base_url('css/style.css')?>" media="all" rel="stylesheet" type="text/css" />
-    <link href="<?=base_url('css/ladda.min.css')?>" media="all" rel="stylesheet" type="text/css" />
-    <link href="<?=base_url('css/nprogress.css')?>" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url('css/ladda.min.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url('css/nprogress.css')?>" rel="stylesheet" type="text/css" />
   </head>
   <body id="top">
 
@@ -43,6 +43,7 @@
       
       </form>
 
+
     </div>
 
     <script src="<?=base_url('js/jquery-1.11.0.min.js')?>" charset="utf-8"></script>
@@ -50,7 +51,11 @@
     <script src="<?=base_url('js/typeahead.bundle.min.js')?>" charset="utf-8"></script>
     <script src="<?=base_url('js/jquery.maskedinput.min.js')?>" type="text/javascript"></script>
     <script src="<?=base_url('js/script.js')?>" charset="utf-8"></script>
-    <script src="<?=base_url('js/spin.min.js')?>"></script>
-    <script src="<?=base_url('js/script.js')?>"></script>
+    <script src="<?=base_url('js/spin.min.js')?>" charset="utf-8"></script>
+    <script src="<?=base_url('js/ladda.min.js')?>"></script>
+    <script>
+     
+    </script>
+
   </body>
 </html>
