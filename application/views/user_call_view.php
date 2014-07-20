@@ -7,6 +7,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Bitter:700|Open+Sans:400,400italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href="<?=base_url('css/style.css')?>" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url('css/ladda.min.css')?>" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url('css/nprogress.css')?>" media="all" rel="stylesheet" type="text/css" />
   </head>
   <body id="top">
 
@@ -32,7 +34,6 @@
            <li id="li_outbound">
               <label>Who can we call for you?</label>
               <input type="text" name="outbound" id="outbound" class="text-input typeahead" autocomplete="off" placeholder="Name of a company&hellip;" style="background-color: #111;"/>
-              
            </li>
         </ul>
         <img src="<?=base_url('images/myloadingimage.gif')?>" style="display: none;" id="loading_image">
@@ -49,6 +50,7 @@
     <script src="<?=base_url('js/typeahead.bundle.min.js')?>" charset="utf-8"></script>
     <script src="<?=base_url('js/jquery.maskedinput.min.js')?>" type="text/javascript"></script>
     <script src="<?=base_url('js/script.js')?>" charset="utf-8"></script>
-    
+    <script src="<?=base_url('js/spin.min.js')?>"></script>
+    <script src="<?=base_url('js/script.js')?>"></script>
   </body>
 </html>

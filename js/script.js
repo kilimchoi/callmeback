@@ -70,9 +70,9 @@ function appendOptions (event) {
 }
 
 function optionsComplete() {
-  var new_button = $('<li><a href="#" class="text-input ladda-button" id="submit" data-style="expand-right"><span class="ladda-label">Call</span></a></li>');
+  var new_button = $('<li style="text-align: center;"><button type="submit" class="ladda-button" data-color="green" data-style="expand-right" name="submit"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
   new_button.appendTo('ul.form-fields');
-
+  Ladda.bind( '.ladda-button', { timeout: 2000 } );
   // Submit data
   $('#submit').on('click', function(e){
 	
@@ -164,7 +164,7 @@ $(document).ready(function(){
   }, false);
 
   // General focus forward/back
-  $("form#app li").focusin(function(){
+  $("form#app li#li_phone").focusin(function(){
     $(this).removeClass('hidden');
     $(this).addClass('active');
     var target = $(this).find('.text-input').first();
@@ -177,10 +177,39 @@ $(document).ready(function(){
     $(this).nextAll('li').addClass('hidden');
     console.log('form#app li focusin() done.')
   });
+
+  $("form#app li#li_email").focusin(function(){
+    $(this).removeClass('hidden');
+    $(this).addClass('active');
+    var target = $(this).find('.text-input').first();
+    $.smoothScroll({
+      offset: -focusHeight,
+      scrollTarget: target,
+      afterScroll: focus(target),
+      speed: 200
+    });
+    $(this).nextAll('li').addClass('hidden');
+    console.log('form#app li focusin() done.')
+  });
+
+  $("form#app li#li_outbound").focusin(function(){
+    $(this).removeClass('hidden');
+    $(this).addClass('active');
+    var target = $(this).find('.text-input').first();
+    $.smoothScroll({
+      offset: -focusHeight,
+      scrollTarget: target,
+      afterScroll: focus(target),
+      speed: 200
+    });
+    $(this).nextAll('li').addClass('hidden');
+    console.log('form#app li focusin() done.')
+  });
+
   var phoneCheckmarkSpan = document.createElement('span');
   var emailCheckmarkSpan = document.createElement('span');
   var outboundCheckmarkSpan = document.createElement('span');
-  $("form#app li").focusout(function(){
+  $("form#app li#li_phone").focusout(function(){
     $(this).removeClass('active');
     
     if ($("#phone").val() != "" && phoneCheckmarkSpan.innerHTML.length == 0) {
@@ -192,7 +221,13 @@ $(document).ready(function(){
       phoneCheckmarkSpan.innerHTML = "✓";
       console.log(phoneCheckmarkSpan);
       phone.appendChild(phoneCheckmarkSpan);
-    } else if ($("#email").val() != "" && emailCheckmarkSpan.innerHTML.length == 0) {
+    } 
+    console.log('form#app li#li_phone focusout() done.')
+  });
+
+  $("form#app li#li_email").focusout(function() { 
+    $(this).removeClass('active');
+    if ($("#email").val() != "" && emailCheckmarkSpan.innerHTML.length == 0) {
       var email = document.getElementById('li_email');
       var spanIdName = 'checkmark';
       emailCheckmarkSpan.setAttribute('id', spanIdName);
@@ -200,7 +235,13 @@ $(document).ready(function(){
       emailCheckmarkSpan.innerHTML = "✓";
       console.log(emailCheckmarkSpan);
       email.appendChild(emailCheckmarkSpan);
-    } else if ($("#outbound").val() != "" && outboundCheckmarkSpan.innerHTML.length == 0) {
+    } 
+    console.log('form#app li#li_email focusout() done.')
+  });
+
+  $("form#app li#li_outbound").focusout(function() { 
+    $(this).removeClass('active');
+    if ($("#outbound").val() != "" && outboundCheckmarkSpan.innerHTML.length == 0) {
       var outbound = document.getElementById('li_outbound');
       var spanIdName = 'checkmark';
       outboundCheckmarkSpan.setAttribute('id', spanIdName);
@@ -209,9 +250,8 @@ $(document).ready(function(){
       console.log(outboundCheckmarkSpan);
       outbound.appendChild(outboundCheckmarkSpan);
     }
-    console.log('form#app li focusout() done.')
+    console.log('form#app li#li_outbound focusout(0 done.')
   });
-
 
   $('.form-fields .next').on('click', function(e){
     console.log('button click will result in focus.');
