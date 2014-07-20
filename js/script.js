@@ -29,7 +29,7 @@ var substringMatcher = function(strs) {
   };
 };
  
-var states = ['Comcast', 'DMV', 'Verizon Wireless', "PG&E", "Time Warner Cable"];
+var states = ['Comcast', 'DMV', 'Verizon Wireless', "PG&E", "Time Warner Cable", "T-mobile"];
  
 $('#outbound').typeahead({
   hint: true,
