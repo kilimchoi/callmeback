@@ -16,7 +16,7 @@ class User extends CI_Controller
 	{
 		echo "<?xml version='1.0' encoding='UTF-8'?>";
 		echo "<Response>";
-		echo "<Gather action='".$this->getserverurl()."user/forwardxml?callback=".urlencode($_GET['callback'])."&mail=".urlencode($_GET['mail'])."' numDigits='1'>";
+		echo "<Gather action='".$this->getserverurl()."user/forwardxml?callback=".urlencode($_GET['callback'])."&amp;mail=".urlencode($_GET['mail'])."' numDigits='1'>";
 		echo "<Say voice='alice' loop='0'>Please press any key to speak to the customer.</Say>";
 		echo "</Gather>";
 		echo "</Response>";
@@ -69,7 +69,7 @@ class User extends CI_Controller
 		$this->email->initialize($config);
 		
 		$this->email->from('callmemaybeserver@gmail.com', 'CallMeMaybe');
-		$list = array($_GET['email']);
+		$list = array($_GET['mail']);
 		$this->email->to($list);
 		$this->email->reply_to('callmemaybeserver@gmail.com', 'CallMeMaybe');
 		$this->email->subject('Your Call Recording is Available for Downloading');
