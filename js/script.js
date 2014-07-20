@@ -83,19 +83,16 @@ function optionsComplete() {
     $('form#app').find("input, textarea, .text-input").each(function() {
       console.log("this.name is:", this.name);
       if (this.name === "outbound") {
-        payload[this.name] = '4084776294' //comcast customer service number
+        payload[this.name] = '6175843998' //comcast customer service number
       } else { 
         payload[this.name] = $(this).val();
       }
     });
-    payload['sourcenumber'] = '+1 ' + payload['phone'];
-    $("#sourcenumber_hidden").val(payload['sourcenumber']);
-    $("#sourceemail_hidden").val(payload['sourceemail']);
-    $("#targetnumber_hidden").val(payload['targetnumber']);
-   
-    //payload['sequence'] = sequence;
-    //payload = JSON.stringify(payload);
-
+    payload['phone'] = '+1 ' + payload['phone'];
+    $("#sourcenumber_hidden").val(payload['phone']);
+    $("#sourceemail_hidden").val(payload['email']);
+    $("#targetnumber_hidden").val(payload['outbound']);
+	
     // Hide field entry
     $('#intro').fadeOut();
     $('.form-fields li').each(function(){ $(this).fadeOut(); });

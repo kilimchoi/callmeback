@@ -29,7 +29,7 @@
            </li>
            <li id="li_email">
               <label>Where can we email you the recorded conversation?</label>
-              <input data-next="#outbound" id="sourceemail" type="email" name="email" class="text-input" placeholder="your-email@example.com"/>
+              <input data-next="#outbound" id="email" type="email" name="email" class="text-input" placeholder="your-email@example.com"/>
            </li>
            <li id="li_outbound">
               <label>Who can we call for you?</label>
