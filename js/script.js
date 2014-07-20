@@ -217,7 +217,10 @@ $(document).ready(function(){
       var phone = document.getElementById('li_phone');
       var spanIdName = 'checkmark';
       phoneCheckmarkSpan.setAttribute('id', spanIdName);
-      phoneCheckmarkSpan.setAttribute('style', 'color: green')
+      phoneCheckmarkSpan.setAttribute('style', 'color: green; float: left')
+      //var img_url = "<?=base_url('/images/checkmark.png')?>";
+      //var full_url = '<img src=\"' + img_url + '\">';
+      //console.log("decoded is: ", decodeURI(full_url));
       phoneCheckmarkSpan.innerHTML = "✓";
       console.log(phoneCheckmarkSpan);
       phone.appendChild(phoneCheckmarkSpan);
@@ -231,7 +234,7 @@ $(document).ready(function(){
       var email = document.getElementById('li_email');
       var spanIdName = 'checkmark';
       emailCheckmarkSpan.setAttribute('id', spanIdName);
-      emailCheckmarkSpan.setAttribute('style', 'color: green')
+      emailCheckmarkSpan.setAttribute('style', 'color: green; float: left')
       emailCheckmarkSpan.innerHTML = "✓";
       console.log(emailCheckmarkSpan);
       email.appendChild(emailCheckmarkSpan);
@@ -244,7 +247,7 @@ $(document).ready(function(){
       var outbound = document.getElementById('li_outbound');
       var spanIdName = 'checkmark';
       outboundCheckmarkSpan.setAttribute('id', spanIdName);
-      outboundCheckmarkSpan.setAttribute('style', 'color: green')
+      outboundCheckmarkSpan.setAttribute('style', 'color: green; float: left')
       outboundCheckmarkSpan.innerHTML = "✓";
       console.log(outboundCheckmarkSpan);
       outbound.appendChild(outboundCheckmarkSpan);

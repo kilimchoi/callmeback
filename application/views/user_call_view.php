@@ -37,6 +37,7 @@
            </li>
         </ul>
         <img src="<?=base_url('images/myloadingimage.gif')?>" style="display: none;" id="loading_image">
+        
         <input type="tel" style='display: none' id='sourcenumber_hidden' name="sourcenumber" />
         <input type="email" style='display: none' id='sourceemail_hidden' name="sourceemail" />
         <input type="text" style='display: none' id='targetnumber_hidden' name="targetnumber" />
