@@ -3030,7 +3030,7 @@ header {
   z-index: 99; }
   header h1 {
     margin: 0;
-    font: 700 1.75em "Bitter";
+    font: 700 3em "Bitter";
     letter-spacing: -0.02em;
     text-shadow: 0 1px 0 #2c2e35;
     white-space: nowrap; }
@@ -3047,8 +3047,16 @@ header {
   background-color: #111;
   text-align: center; }
   .wrapper p {
-    font: "Open Sans", "Proxima Nova", "Helvetica Neue", Helvatica, Arial, sans-serif;
-    padding: 0 0.125em; }
+    font-family: "Open Sans", "Proxima Nova", "Helvetica Neue", Helvatica, Arial, sans-serif;
+    padding: 0 0.125em;
+    font-size: 18px; 
+  }
+
+  p#intro { 
+    font-family: "Open Sans", "Proxima Nova", "Helvetica Neue", Helvatica, Arial, sans-serif;
+    padding: 0 0.125em;
+    font-size: 15px; 
+  }
     .wrapper p emph {
       display: block;
       clear: both;

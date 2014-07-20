@@ -74,7 +74,7 @@ function optionsComplete() {
   console.log('i is ', i);
   var new_button = $('<li style="text-align: center"><button class="ladda-button" data-color="green" data-style="expand-left"><span class="ladda-label">Call Now!</span><span class="ladda-spinner"></span></button></li>');
   new_button.appendTo('ul.form-fields');
-  Ladda.bind( '.ladda-button', { timeout: 2000 } );
+  Ladda.bind( '.ladda-button', { timeout: 9000 } );
   // Submit data
   $('#submit').on('click', function(e){
   
