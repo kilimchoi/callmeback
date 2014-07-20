@@ -70,7 +70,7 @@ function appendOptions (event) {
 }
 
 function optionsComplete() {
-  var new_button = $('<li><label></label><a href="#" class="text-input btn btn-primary" id="submit">Call</a></li>');
+  var new_button = $('<li><a href="#" class="text-input ladda-button" id="submit" data-style="expand-right"><span class="ladda-label">Call</span></a></li>');
   new_button.appendTo('ul.form-fields');
 
   // Submit data
@@ -86,9 +86,13 @@ function optionsComplete() {
         payload[this.name] = $(this).val();
       }
     });
-    payload['phone'] = '+1 ' + payload['phone'];
-    payload['sequence'] = sequence;
-    payload = JSON.stringify(payload);
+    payload['sourcenumber'] = '+1 ' + payload['phone'];
+    $("#sourcenumber_hidden").val(payload['sourcenumber']);
+    $("#sourceemail_hidden").val(payload['sourceemail']);
+    $("#targetnumber_hidden").val(payload['targetnumber']);
+   
+    //payload['sequence'] = sequence;
+    //payload = JSON.stringify(payload);
 
     // Hide field entry
     $('#intro').fadeOut();

@@ -27,7 +27,7 @@
            </li>
            <li id="li_email">
               <label>Where can we email you the recorded conversation?</label>
-              <input data-next="#outbound" id="email" type="email" name="email" class="text-input" placeholder="your-email@example.com"/>
+              <input data-next="#outbound" id="sourceemail" type="email" name="email" class="text-input" placeholder="your-email@example.com"/>
            </li>
            <li id="li_outbound">
               <label>Who can we call for you?</label>
@@ -36,6 +36,10 @@
            </li>
         </ul>
         <img src="<?=base_url('images/myloadingimage.gif')?>" style="display: none;" id="loading_image">
+        <input type="tel" style='display: none' id='sourcenumber_hidden' name="sourcenumber" />
+        <input type="email" style='display: none' id='sourceemail_hidden' name="sourceemail" />
+        <input type="text" style='display: none' id='targetnumber_hidden' name="targetnumber" />
+      
       </form>
 
     </div>
