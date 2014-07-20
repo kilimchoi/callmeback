@@ -52,7 +52,9 @@ class User extends CI_Controller
 		$sourcenumber = isset($_POST['sourcenumber'])?$_POST['sourcenumber']:"+16175843998";
 		$sourceemail = isset($_POST['sourceemail'])?$_POST['sourceemail']:"eecsxielu@gmail.com";
 		
-		$call = $client->account->calls->create($from, $targetnumber, $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail), array());
+		$call = $client->account->calls->create($from, $targetnumber, $this->getserverurl()."user/initialxml?callback=".urlencode($sourcenumber)."&mail=".urlencode($sourceemail), array(
+		'Record' => 'true'
+		));
 		
 		$this->load->view('user_call_success_view');
 	}
