@@ -10,11 +10,11 @@ class User extends CI_Controller
 		//$token = "af5ec0ffd4db258e7dbdd33413b26646";
 		$token = "8627a06e8f3462235ed1ef20f0df937d";
 		$client = new Services_Twilio($sid, $token);
-		$call = $client->account->calls->create("+17039911371", "+14084776294", "http://www.ocf.berkeley.edu/~xielu/voice.php?callback=".urlencode("+16175843998"), array(
+		$call = $client->account->calls->create("+16175843998", "+16175843998", "http://www.ocf.berkeley.edu/~xielu/voice.php?callback=".urlencode("+12137008466"), array(
 			'Record' => 'true'
 		));
-		$record = $client->account->calls->get($call->sid);
-		echo $record;
+		$recordings = $client->account->recordings->get($call->sid);
+		echo $recordings;
 	}
 
 	public function sms()
